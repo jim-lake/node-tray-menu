@@ -119,7 +119,6 @@ void TrayDestroy(const int index) {
   return self;
 }
 - (void)myClick:(NSMenuItem *)menuItem {
-  NSLog(@"click: %d", self->_index);
   if (g_clickCallback != NULL) {
     g_clickCallback(self->_index);
   }
