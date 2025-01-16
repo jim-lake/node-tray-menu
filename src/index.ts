@@ -1,5 +1,4 @@
 const addon = require('../build/Release/node_tray_menu.node');
-const util = require('node:util');
 
 addon.setCallback(_callback);
 

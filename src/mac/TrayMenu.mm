@@ -82,6 +82,7 @@ int TrayCreate(const std::string &path, const int menu_index) {
     [g_itemMap setObject:item forKey:[NSNumber numberWithInteger:index]];
     [item setMenu:menu];
     if (image != nil) {
+      [image setTemplate:TRUE];
       item.button.image = image;
     } else {
       NSLog(@"TrayCreate: bad image: %s", path.c_str());
