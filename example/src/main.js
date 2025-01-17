@@ -70,8 +70,8 @@ function _tick() {
 function _modify() {
   if (Math.random() > 0.51) {
     const pos = Math.floor(Math.random() * g_menu.items.length);
-    console.log('_modify: remove:', pos);
     g_menu.remove(pos);
+    console.log('_modify: remove:', pos, 'new num:', g_menu.items.length);
   } else {
     const now = Date.now();
     const mi = new MenuItem({
@@ -81,6 +81,7 @@ function _modify() {
     });
     const pos = Math.floor(Math.random() * g_menu.items.length);
     g_menu.insert(pos, mi);
+    console.log('_modify: insert: pos:', pos, 'new num:', g_menu.items.length);
   }
 }
 function _click() {

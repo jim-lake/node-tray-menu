@@ -51,7 +51,7 @@ class Menu {
   }
   insert(pos, menuItem) {
     addon.menuInsertItem(this._index, menuItem._index, pos);
-    this.items[pos] = menuItem;
+    this.items.splice(pos, 0, menuItem);
   }
   remove(pos) {
     addon.menuRemoveItem(this._index, pos);
