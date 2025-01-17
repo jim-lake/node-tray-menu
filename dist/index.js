@@ -1,10 +1,9 @@
 const addon = require('../build/Release/node_tray_menu.node');
-const util = require('node:util');
 addon.setCallback(_callback);
 const g_itemMap = new Map();
 function _callback(index) {
   const mi = g_itemMap.get(index);
-  mi?._click?.();
+  mi?._click?.call?.(mi);
 }
 class MenuItem {
   constructor(params) {

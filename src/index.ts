@@ -6,7 +6,7 @@ const g_itemMap = new Map<number, MenuItem>();
 
 function _callback(index: number) {
   const mi = g_itemMap.get(index);
-  mi?._click?.();
+  mi?._click?.call?.(mi);
 }
 
 type MenuItemParams = {

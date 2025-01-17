@@ -1,5 +1,4 @@
 declare const addon: any;
-declare const util: any;
 declare const g_itemMap: Map<number, MenuItem>;
 declare function _callback(index: number): void;
 type MenuItemParams = {
