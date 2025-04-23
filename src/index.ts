@@ -1,21 +1,19 @@
 const addon = require('../build/Release/node_tray_menu.node');
 
 addon.setCallback(_callback);
-
 const g_itemMap = new Map<number, MenuItem>();
 
 function _callback(index: number) {
   const mi = g_itemMap.get(index);
   mi?._click?.call?.(mi);
 }
-
-type MenuItemParams = {
+export type MenuItemParams = {
   click?: () => void;
   type: 'normal' | 'separator';
   label?: string;
   enabled?: boolean;
 };
-class MenuItem {
+export class MenuItem {
   _index: number = 0;
   _label: string = '';
   _click: () => void | undefined;
@@ -46,7 +44,7 @@ class MenuItem {
     g_itemMap.delete(this._index);
   }
 }
-class Menu {
+export class Menu {
   _index: number = 0;
   items: MenuItem[] = [];
   constructor() {
@@ -72,7 +70,7 @@ class Menu {
     addon.itemDestroy(this._index);
   }
 }
-class Tray {
+export class Tray {
   _index: number;
   constructor(image: any, menu: Menu) {
     this._index = 0;
@@ -87,7 +85,8 @@ class Tray {
     addon.trayDestroy(this._index);
   }
 }
-
-exports.MenuItem = MenuItem;
-exports.Menu = Menu;
-exports.Tray = Tray;
+export default {
+  MenuItem,
+  Menu,
+  Tray,
+};

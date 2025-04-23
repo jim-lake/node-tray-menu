@@ -1,13 +1,10 @@
-declare const addon: any;
-declare const g_itemMap: Map<number, MenuItem>;
-declare function _callback(index: number): void;
-type MenuItemParams = {
+export type MenuItemParams = {
   click?: () => void;
   type: 'normal' | 'separator';
   label?: string;
   enabled?: boolean;
 };
-declare class MenuItem {
+export declare class MenuItem {
   _index: number;
   _label: string;
   _click: () => void | undefined;
@@ -16,7 +13,7 @@ declare class MenuItem {
   set label(new_label: string);
   destroy(): void;
 }
-declare class Menu {
+export declare class Menu {
   _index: number;
   items: MenuItem[];
   constructor();
@@ -25,8 +22,14 @@ declare class Menu {
   remove(pos: number): void;
   destroy(): void;
 }
-declare class Tray {
+export declare class Tray {
   _index: number;
   constructor(image: any, menu: Menu);
   destroy(): void;
 }
+declare const _default: {
+  MenuItem: typeof MenuItem;
+  Menu: typeof Menu;
+  Tray: typeof Tray;
+};
+export default _default;

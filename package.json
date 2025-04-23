@@ -1,6 +1,6 @@
 {
   "name": "node-tray-menu",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Tray menu with mutability for electron",
   "main": "dist/index.js",
   "gypfile": true,

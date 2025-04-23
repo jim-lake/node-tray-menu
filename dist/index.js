@@ -1,3 +1,6 @@
+'use strict';
+Object.defineProperty(exports, '__esModule', { value: true });
+exports.Tray = exports.Menu = exports.MenuItem = void 0;
 const addon = require('../build/Release/node_tray_menu.node');
 addon.setCallback(_callback);
 const g_itemMap = new Map();
@@ -35,6 +38,7 @@ class MenuItem {
     g_itemMap.delete(this._index);
   }
 }
+exports.MenuItem = MenuItem;
 class Menu {
   constructor() {
     this._index = 0;
@@ -61,6 +65,7 @@ class Menu {
     addon.itemDestroy(this._index);
   }
 }
+exports.Menu = Menu;
 class Tray {
   constructor(image, menu) {
     this._index = 0;
@@ -75,6 +80,9 @@ class Tray {
     addon.trayDestroy(this._index);
   }
 }
-exports.MenuItem = MenuItem;
-exports.Menu = Menu;
 exports.Tray = Tray;
+exports.default = {
+  MenuItem,
+  Menu,
+  Tray,
+};
