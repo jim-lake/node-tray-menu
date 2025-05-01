@@ -1,10 +1,11 @@
 {
   "name": "node-tray-menu",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Tray menu with mutability for electron",
   "main": "dist/index.js",
   "gypfile": true,
   "license": "MIT",
+  "os": ["darwin"],
   "files": [
     "binding.gyp",
     "src/mac/",
